@@ -29,7 +29,7 @@ jobs:
         run: pylint main.py > lint-report.txt
 
       - name: Upload lint artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lint-report
           path: lint-report.txt
@@ -51,7 +51,7 @@ jobs:
         run: pytest --cov=./ --cov-fail-under=50 --junitxml=test-report.xml
 
       - name: Upload test report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: test-report.xml
@@ -67,7 +67,7 @@ jobs:
         run: zip -r build.zip .
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build.zip

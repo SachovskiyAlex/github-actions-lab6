@@ -25,7 +25,7 @@ jobs:
         run: pylint main.py || true
 
       - name: Save lint report
-        run: pylint main.py > lint-report.txt
+        run: pylint main.py > lint-report.txt || true
 
       - name: Upload lint artifact
         uses: actions/upload-artifact@v4
